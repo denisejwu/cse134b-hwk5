@@ -27,5 +27,27 @@
         messages.appendChild(message);
     });
   </script>
+  <script>
+    async function loadMessage(){
+      try{
+        const response = await fetch("https://uselessfacts.jsph.pl/api/v2/facts/random");
+
+        if(!response.ok){
+          throw new Error(`HTTP status ${response.status}.`);
+        }
+        const data = await response.json();
+
+        if(typeof data?.text !== "string"){
+          throw new Error("Expected a message in the response.");
+        }
+
+        console.log(data.text);
+      }catch(error){
+        console.error("Could not load the message.", error);
+      }
+    }
+    loadMessage();
+
+  </script>
 </body>
 </html>

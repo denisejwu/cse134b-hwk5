@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home | DJZ Studios</title>
+  <link rel="icon" href="images/favicon.png">
+  <link rel="stylesheet" href="project-panel.css">
+  <!-- Analytics placeholder: replace GTM-XXXXXXX with a real Google Tag Manager ID -->
+  <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-XXXXXXX"></script>
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="index.css">
+  <script src="theme.js" defer></script>
+  <script src="project-panel.js" defer></script>
+
+</head>
+<body>
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX" width="0" height="0" hidden></iframe>
+  </noscript>
+
+  <header>
+    <a href="index.html">
+      <svg width="80" height="80" viewBox="0 0 80 80" role="img" aria-labelledby="logo-title">
+        <title id="logo-title">DJZ Studios home</title>
+        <circle cx="40" cy="40" r="36" fill="black" stroke="gray" stroke-width="4"/>
+        <text x="40" y="48" text-anchor="middle" font-family="sans-serif" font-size="22" fill="white">DJZ</text>
+      </svg>
+    </a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="film.html">Film &amp; Photography</a>
+      <a href="about.html">About</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="form-no-js.html">Contact Form</a>
+      <a href="form-with-js.html">Contact Form (JS)</a>
+    </nav>
+    <button type="button" id="theme-toggle" hidden>Switch to dark theme</button>
+  </header>
+  
+
+
+  <main>
+    <dialog open>
+      <p class="dialog-text">Thanks for visiting! This portfolio is a work in progress, and new projects are added regularly.</p>
+      <form method="dialog">
+        <button class="dialog-btn" type="submit">Close</button>
+      </form>
+    </dialog>
+
+    <section id="intro">
+      <img class="my-pic" src="images/headshot.jpg" alt="Denise Wu Mendez smiling outdoors" width="300">
+      <h1>Denise Wu Mendez</h1>
+      <p class="job-titles">UX/Product Designer &amp; Front-End Developer | <span> Seeking Summer 2027 internships</span></p>
+      <p class="intro-text">Short intro about you goes here.</p>
+      <section class="intro-actions">
+        <a href="about.html">More about me</a>
+        <button  type="button">Resume</button>
+      </section>
+      
+    </section>
+
+    <section id="featured">
+      <h2>Featured Projects</h2>
+      
+      <article>
+        <a href="project1.html">
+          <img id="project1-thumb" src="images/project1-thumb.jpg" alt="Screenshot of Project 1 home screen" width="250">
+        </a>
+        <h3>Project 1 Title  <span><project-type>Tech</project-type></span></h3>
+       
+        <p>One-line summary of the project.</p>
+
+        <section class="project-action">
+            <a href="project1.html">More Information</a>
+        </section>
+       
+      </article>
+
+      <!-- Copy the article above for each project -->
+    </section>
+    <button type="button" id="compact-toggle" hidden>Hide details</button>
+    <project-panel>
+      <noscript><p>Enable Javascript to load live facts in this widget.</p></noscript>
+    </project-panel>
+  </main>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Denise Wu Mendez<br>
+      Email: dwumendez@ucsd.edu</p>
+    
+    <section id="info-links">
+      <a href="https://www.linkedin.com/in/denisewumendez/" target="_blank">LinkedIn</a>
+      <a href="https://github.com/denisejwu" target="_blank">GitHub</a>
+    </section>
+   
+    <section class="message-form">
+      <p id="hire-me"><strong>Hire me for your next project!</strong></p>
+
+      <form id="hire-from" action="/about.html">
+        <fieldset>
+          <legend>Send me a message</legend>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" required></textarea>
+          <input type="submit" value="Send">
+        </fieldset>
+      </form>
+    
+    </section>
+    
+  </section>
+  {% include "footer.njk" %}
+</body>
+</html>

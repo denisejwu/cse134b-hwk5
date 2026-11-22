@@ -1,0 +1,75 @@
+---
+permalink: about.html
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | DJZ Studios</title>
+    <link rel="icon" href="images/favicon.png">
+    <!-- Analytics placeholder: replace GTM-XXXXXXX with a real Google Tag Manager ID -->
+    <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-XXXXXXX"></script>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="about.css">
+    <script src="theme.js" defer></script>
+</head>
+<body>
+    
+
+    <header>
+        <a href="index.html">
+            <svg width="80" height="80" viewBox="0 0 80 80" role="img" aria-labelledby="logo-title">
+                <title id="logo-title">DJZ Studios home</title>
+                <circle cx="40" cy="40" r="36" fill="black" stroke="gray" stroke-width="4"/>
+                <text x="40" y="48" text-anchor="middle" font-family="sans-serif" font-size="22" fill="white">DJZ</text>
+            </svg>
+        </a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="film.html">Film &amp; Photography</a>
+            <a href="about.html">About</a>
+            <a href="index.html#contact">Contact</a>
+            <a href="form-no-js.html">Contact Form</a>
+            <a href="form-with-js.html">Contact Form (JS)</a>
+        </nav>
+        <button type="button" id="theme-toggle" hidden>Switch to dark theme</button>
+    </header>
+
+    <main>
+        <section class="about-me">
+            
+            <h1>About Me</h1>
+            <img src="images/headshot.jpg" alt="Denise Wu Mendez smiling outdoors" width="300">
+            <h2>Denise Wu Mendez</h2>
+            <p>UX/Product Designer & Front-End Developer | Summer 2027 | Graduating 2027</p>
+            <p>
+                <label for="degree-progress">Degree progress:</label>
+                <progress id="degree-progress" value="3" max="4">3 of 4 years</progress>
+            </p>
+        </section>
+        <!-- writing paragraphs about yourself, your background, interests, and what drives you in your career. You can also include information about your experience, education, and any other relevant details that you would like to share with visitors to your website. -->
+        <section class="bio">
+            <section class="bio-text">
+                 <h2>Bio</h2>
+                <p>Skills Set: UI/UX Design, HTML, CSS, JavaScript</p>
+                <img src="images/hobbies.jpg" alt="first hobbies" width="300">
+                <p>Short bio about you goes here.</p>
+                <ul>
+                    <li>Background: Brief overview of your educational and professional background.</li>
+                    <li>Interests: List your interests and hobbies that relate to your career.</li>
+                    <li>What Drives You: Explain what motivates you in your work and career.</li>
+                </ul>
+                <p>Additional information about your experience, education, and any other relevant details can be included here.</p>
+                
+
+            </section>
+           
+        </section>
+    </main>
+
+    {% include "footer.njk" %}
+
+</body>
+</html>

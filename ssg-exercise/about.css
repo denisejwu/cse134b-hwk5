@@ -1,0 +1,24 @@
+/* About page styles. Colors, fonts, header, nav, and footer live in main.css */
+
+.about-me{
+    margin: var(--space-lg);
+}
+/* Descendant combinator: the headshot inside the About Me section */
+.about-me img{
+    display: block;
+    margin: 0 auto;
+}
+.bio{
+    background-color: var(--teal-dark);
+}
+.bio-text{
+    margin: var(--space-lg);
+    padding-top: var(--space-lg);
+    padding-bottom: var(--space-lg);
+    color: var(--gold);
+}
+/* Descendant combinator: the hobbies photo inside the bio */
+.bio-text img{
+    display: block;
+    margin: 0 auto;
+}

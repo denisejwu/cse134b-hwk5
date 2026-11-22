@@ -1,0 +1,224 @@
+/* Home page styles. Colors, fonts, header, nav, and footer live in main.css */
+
+dialog{
+    border: 3px solid var(--teal-dark);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+}
+.dialog-text{
+    font-size: 1rem;
+    color: var(--text);
+}
+form{
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+.dialog-btn{
+    background-color: var(--teal);
+    color: var(--cream);
+    padding: 0.625em 1em;   /* em so the padding scales with the button text */
+    border: none;
+    border-radius: var(--radius);
+    font-family: inherit;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.dialog-btn:hover{
+    background-color: var(--teal-dark);
+}
+
+/* intro section */
+.my-pic{
+    display: block;
+    margin: 0 auto;
+}
+/* Descendant combinator: the h1 inside the intro section, plus the intro text lines */
+#intro h1,
+.intro-text,
+.job-titles{
+    text-align: center;
+}
+.intro-actions,
+.project-action{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    gap: var(--space-sm);
+    padding-right: 10rem;   
+}
+/* Descendant combinator: the outlined links in the intro and in the footer */
+.intro-actions a,
+#info-links a{
+    color: var(--link);
+    border: 2px solid var(--link);
+    padding: 0.625em 1.125em;
+    border-radius: var(--radius);
+    text-decoration: none;
+}
+.project-action a{
+    color: var(--cream);
+    border: 2px solid var(--cream);
+    padding: 0.625em 1.125em;
+    border-radius: var(--radius);
+    text-decoration: none;
+}
+.intro-actions a:hover,
+.project-action a:hover,
+#info-links a:hover{
+    background-color: var(--teal);
+    color: var(--cream);
+    text-decoration: none;
+}
+.intro-actions button{
+    background-color: var(--bg);
+    color: var(--link);
+    border: 2px solid var(--link);
+    padding: 0.625em 1.125em;
+    border-radius: var(--radius);
+    font-family: inherit;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.intro-actions button:hover{
+    background-color: var(--teal);
+    color: var(--cream);
+}
+
+/* featured section */
+#featured{
+    margin-top: var(--space-lg);
+    padding: var(--space-xl);
+    background-color: var(--teal-dark);
+    color: var(--gold);
+}
+#featured h2{
+    text-align: center;
+}
+#featured img{
+    display: block;
+    margin: 0 auto;
+}
+
+/* Project type tag: em so the pill scales with the heading it sits in */
+project-type{
+    display: inline-block;
+    padding: 0.25em 0.75em;
+    border-radius: var(--radius-pill);
+    background-color: var(--cream);
+    color: var(--teal);
+    font-size: 0.85em;
+    font-weight: bold;
+}
+
+/* footer: on the home page it holds the whole contact section */
+#contact{
+    padding: 0;
+    text-align: left;
+}
+/* Child combinator (>): only the heading and paragraph sitting directly in the footer,
+   not the ones nested inside the message form */
+#contact > h2,
+#contact > p,
+#info-links{
+    margin-left: var(--space-lg);
+    margin-right: var(--space-lg);
+}
+#info-links{
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--space-sm);
+}
+
+.message-form{
+    margin-top: var(--space-lg);
+    margin-bottom: 0;
+    padding: var(--space-xl);
+    background-color: var(--teal-dark);
+    color: var(--gold);
+}
+#hire-from{
+    max-width: 500px;
+    margin: 0 auto;
+}
+/* Adjacent sibling combinator (+): the copyright line right after the contact form */
+#hire-from + p{
+    text-align: center;
+}
+
+/* The box around the form */
+.message-form fieldset{
+    border: 2px solid var(--gold);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+}
+
+.message-form legend{
+    padding: 0 var(--space-xs);
+    font-weight: bold;
+}
+
+/* Attribute selectors: the name and email text boxes (picked by their type attribute), plus the textarea */
+.message-form input[type="text"],
+.message-form input[type="email"],
+.message-form textarea{
+    padding: 0.625em;
+    border: none;
+    border-radius: var(--radius);
+    background-color: var(--cream);
+    color: var(--brown);
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.message-form textarea{
+    min-height: 120px;
+    resize: vertical;   /* lets people drag it taller, not wider */
+}
+
+/* Attribute selector: the Send button (the input with type="submit") */
+.message-form input[type="submit"]{
+    margin-top: var(--space-xs);
+    padding: 0.625em 1.125em;
+    border: 2px solid var(--gold);
+    border-radius: var(--radius);
+    background-color: var(--gold);
+    color: var(--teal-dark);
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+.message-form input[type="submit"]:hover{
+    background-color: var(--cream);
+    border-color: var(--cream);
+}
+
+#hire-me{
+    text-align: center;
+    font-size: 1.25rem;
+}
+
+/* Narrow screens: center the button rows and tighten the dark sections */
+@media (max-width: 600px){
+    .intro-actions,
+    .project-action,
+    #info-links{
+        justify-content: center;
+        padding-right: 0;
+    }
+    #featured,
+    .message-form{
+        padding: var(--space-md);
+    }
+}
+
+project-panel{
+    --panel-bg: var(--field-bg);
+    --panel-text: var(--text);
+    --panel-border: var(--field-border);
+}

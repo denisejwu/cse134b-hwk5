@@ -1,0 +1,198 @@
+/* Shared styles for every page on the site.
+   Each page links this file first, then its own stylesheet for page-only rules. */
+
+/* Site-wide design choices: colors, fonts, and spacing */
+:root{
+    /* Colors */
+    --teal: #008080;
+    --teal-dark: #1F4C4C;
+    --teal-card: #2A5E5E;
+    --gold: #E1C89A;
+    --cream: #F8F4E3;
+    --brown: #5A3E2B;
+    --burgundy: #6D1F1F;
+    --text-color: #333;
+
+    /* Typography */
+    --font-main: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    --line-height: 1.5;
+
+    /* Spacing scale (use these instead of one-off values) */
+    --space-xs: 0.5rem;
+    --space-sm: 0.75rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+
+    /* Rounded corners */
+    --radius: 8px;
+    --radius-lg: 12px;
+    --radius-pill: 999px;
+
+    /* Theme roles: what each color is used FOR (light theme values) */
+    --bg: var(--cream);
+    --text: var(--text-color);
+    --link: var(--teal);
+    --muted-text: var(--teal-dark);
+    --field-bg: #ffffff;
+    --field-text: var(--text-color);
+    --focus: var(--burgundy);
+    --error-text: var(--burgundy);
+    --error-bg: #ffdddd;
+    --field-border: var(--teal-dark);
+    --warning-text: var(--brown);
+    --color-scheme:light;
+
+
+}
+/* Dark theme: same roles, different values */
+:root[data-theme="dark"] {
+    color-scheme: dark;
+    --bg: #121a1a;
+    --text: #ece6d6;
+    --link: #7fd1d1;
+    --muted-text: #c9d6d6;
+    --field-bg: #1e2a2a;
+    --field-text: #ece6d6;
+    --focus: var(--gold);
+    --error-text: #ff9a9a;
+    --error-bg: #3a1a1a;
+    --field-border: #7fd1d1;
+    --warning-text: var(--gold);
+}
+
+
+*{
+    box-sizing: border-box;
+}
+a{
+    color: var(--link);
+}
+header{
+    view-transition-name: site-header;
+}
+body{
+    margin: 0;
+    font-family: var(--font-main);
+    line-height: var(--line-height);
+    color: var(--text);
+    background-color: var(--bg);
+}
+
+/* Keeps images and videos inside the screen on narrow phones */
+img,
+iframe{
+    max-width: 100%;
+}
+img{
+    height: auto;
+}
+
+/* Heading levels: same sizes on every page */
+h1,
+h2,
+h3{
+    line-height: 1.2;
+}
+h1{
+    font-size: 2.25rem;
+}
+h2{
+    font-size: 1.75rem;
+}
+h3{
+    font-size: 1.25rem;
+}
+
+/* Child combinator (>): page titles that sit directly inside main (portfolio, film, project pages) */
+main > h1{
+    margin: var(--space-lg);
+}
+
+/* Header: logo on the left, navigation on the right */
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-md);
+    padding: var(--space-md) var(--space-xl);
+    background-color: var(--teal-dark);
+    color: var(--gold);
+}
+
+/* Nav links sit in a flex row that wraps instead of overflowing */
+nav{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: var(--space-md);
+}
+
+/* Descendant combinator: every link inside the nav bar */
+nav a{
+    color: var(--gold);
+    text-decoration: none;
+    padding: 0.5em;   /* em so the clickable area grows with the link text */
+    border-radius: 4px;
+    text-align: center;
+}
+nav a:hover{
+    background-color: var(--cream);
+    color: var(--burgundy);
+}
+#theme-toggle{
+    background-color: transparent;
+    color: var(--gold);
+    border: 2px solid var(--gold);
+    border-radius: var(--radius-pill);
+    padding: 0.5em 1em;
+    font-family: inherit;
+    font-size: 1rem;
+    cursor: pointer;
+}
+#theme-toggle:hover{
+    background-color: var(--cream);
+    color: var(--burgundy);
+}
+
+
+/* Descendant combinator: the logo and thumbnail images inside links fade slightly on hover */
+a:hover img,
+a:hover svg{
+    opacity: 0.85;
+}
+
+/* Visible focus ring for keyboard users on every link and control.
+   The cream halo keeps the burgundy ring visible on the dark teal sections too. */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+iframe:focus-visible{
+    outline: 3px solid var(--focus);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 5px var(--bg);
+}
+
+/* Footer: same look on every page */
+footer{
+    padding: var(--space-md);
+    text-align: center;
+    color: var(--muted-text);
+}
+
+@media (max-width: 600px){
+    header{
+        flex-direction: column;
+        padding: var(--space-md);
+    }
+    nav{
+        justify-content: center;
+        gap: var(--space-xs);
+    }
+}
+@media(prefers-reduced-motion: no-preference){
+    @view-transition{
+        navigation:auto;
+    }
+}

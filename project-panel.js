@@ -103,11 +103,55 @@ customElements.define("project-panel", ProjectPanel);
 
 const compactButton = document.querySelector("#compact-toggle");
 const panel = document.querySelector("project-panel");
-compactButton.addEventListener("click", () => {
-  panel.toggleAttribute("compact");
-  if(panel.hasAttribute("compact")){
+const modeKey = "hw5-project-panel-mode";
+
+function loadMode(){
+  try{
+    return localStorage.getItem(modeKey);
+  }catch (error){
+    return null;
+  }
+}
+
+function saveMode(mode){
+    try{
+        localStorage.setItem(modeKey, mode);
+    }catch{
+        console.warn("The mode preference could not be saved.");
+    }
+}
+
+function applyMode(mode){
+  if(mode === "compact"){
+    panel.setAttribute("compact", "");
     compactButton.textContent = "Show details";
   }else{
+    panel.removeAttribute("compact");
     compactButton.textContent = "Hide details";
   }
+}
+
+let currentMode = "expanded";
+if(loadMode() === "compact"){
+    currentMode = "compact";
+}
+applyMode(currentMode);
+compactButton.hidden = false;
+
+compactButton.addEventListener("click", function(){
+    if(currentMode === "expanded"){
+        currentMode = "compact";
+    }else{
+        currentMode = "expanded";
+    }
+    applyMode(currentMode);
+    saveMode(currentMode);
 });
+// compactButton.addEventListener("click", () => {
+//   panel.toggleAttribute("compact");
+//   if(panel.hasAttribute("compact")){
+//     compactButton.textContent = "Show details";
+//   }else{
+//     compactButton.textContent = "Hide details";
+//   }
+// });

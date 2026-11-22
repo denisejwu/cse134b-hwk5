@@ -1,0 +1,8 @@
+project-panel{
+    display: block;
+    background-color: var(--panel-bg, #ffffff);
+    color: var(--panel-text, #333333);
+    border: 2px solid var(--panel-border, #1F4C4C);
+    border-radius: 12px;
+    padding: 1rem;
+}

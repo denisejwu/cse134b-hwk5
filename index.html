@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home | DJZ Studios</title>
   <link rel="icon" href="images/favicon.png">
+  <link rel="stylesheet" href="project-panel.css">
   <!-- Analytics placeholder: replace GTM-XXXXXXX with a real Google Tag Manager ID -->
   <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-XXXXXXX"></script>
   <link rel="stylesheet" href="main.css">
@@ -79,8 +80,10 @@
 
       <!-- Copy the article above for each project -->
     </section>
-    <button type="button" id="compact-toggle">Hide details</button>
-    <project-panel></project-panel>
+    <button type="button" id="compact-toggle" hidden>Hide details</button>
+    <project-panel>
+      <noscript><p>Enable Javascript to load live facts in this widget.</p></noscript>
+    </project-panel>
   </main>
 
   <footer id="contact">

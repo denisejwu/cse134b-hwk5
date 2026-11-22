@@ -216,3 +216,9 @@ project-type{
         padding: var(--space-md);
     }
 }
+
+project-panel{
+    --panel-bg: var(--field-bg);
+    --panel-text: var(--text);
+    --panel-border: var(--field-border);
+}
